@@ -151,9 +151,41 @@ printf("\n %s %s is %d years old and his salary is %d \n", firstname, lastname, 
 ### Math Operators
 
 ```
+int x;
+int y;
+int z;
 
+x = 4;
+y = 5;
+z = x + y;
+// +, -, *, /, %
+
+printf("The result of z is :  %d \n", z);
 ```
 
 ### Calculate inputs from user
 
+```
+float x;
+float y;
+float z;
+
+printf("Insert first number : ");       scanf("%f", &x);
+
+printf("Insert first number : ");       scanf("%f", &y);
+
+z = x * y;
+printf("The result of your numbers is :  %.1f \n", z);
+```
+
 ### Typecasting
+
+```
+int x = 12;
+int y = 10;
+int z = 25;
+float result;
+
+result = ((float)x * (float)y) / (float)z;
+printf("The result is %.2f", result);
+```
