@@ -4,13 +4,13 @@
 
 int main()
 {
-    int x = 12;
-    int y = 10;
-    int z = 25;
-    float result;
+    int x = 9;
+    int y = 5;
+    int z ;
 
-    result = ((float)x * (float)y) / (float)z;
-    printf("The result is %.2f", result);
+    if(x==9 && y==5){
+        printf("This statement is true");
+    }
 
     return 0;
 }
