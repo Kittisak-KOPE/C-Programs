@@ -1,20 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define str "This is s the string variable"
+#include "HeaderOne.h"
 
 int main()
 {
-    int age = 20;
-    int month = 5;
-    int year = 2001;
-    int day = 12;
-    int hello;
-    hello = year - age;
-    char Fjike = 'A';
+    char firstname[20];
+    char lastname[20];
+    int age;
+    int salary;
 
-    printf("The value of age is %d and the today is %d \n", age, day);
-    printf("The result of hello is %d \n", hello);
-    printf("The new variable is %s", str);
+    printf("What is your firstname ?");      scanf("%s", firstname);
+
+    printf("What is your lastname ?");       scanf("%s", lastname);
+
+    printf("How old are you ?");             scanf("%d", &age);
+
+    printf("How much is you salary ?");      scanf("%d", &salary);
+
+    printf("\n %s %s is %d years old and his salary is %d \n", firstname, lastname, age, salary);
 
     return 0;
 }
