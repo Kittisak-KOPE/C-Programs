@@ -1,16 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "HeaderOne.h"
+
+double myave(int nums[], int len){
+    int x;
+    double average, total;
+
+    for(x=0; x<len; ++x){
+        total += nums[x];
+    }
+    return average = total/len;
+}
 
 int main()
 {
-    int x = 9;
-    int y = 5;
-    int z ;
+    int numbers[6] = {45, 67, 12, 8, 9, 3};
+    double result;
 
-    if(x==9 && y==5){
-        printf("This statement is true");
-    }
+    result = myave(numbers, 6);
+    printf("The average of the array is %.2f \n", result);
 
     return 0;
 }
