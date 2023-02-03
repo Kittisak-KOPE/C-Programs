@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
-    int *pt = NULL;
-    int xyz = 4;
+#define TRUE 1
+#define FALSE 0
 
-    // pt = &xyz;
+int main(){
 
-    printf("The address of *pt is %x \n", pt); // 0
+    printf("The value of TRUE is %d \n", TRUE);
+    printf("The value of FALSE is %d \n", FALSE);
 
     return 0;
 }
