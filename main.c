@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define TRUE 1
-#define FALSE 0
-
 int main(){
 
-    printf("The value of TRUE is %d \n", TRUE);
-    printf("The value of FALSE is %d \n", FALSE);
+    char shut;
 
+    printf("Want to shutdown your computer now? (Y/N)");    scanf("%c", &shut);
+
+    if(shut == 'y'){
+        system("shutdown -P now");
+    }
     return 0;
 }

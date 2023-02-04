@@ -1,8 +1,7 @@
 # depslib dependency file v1.0
-1675453296 source:/home/solokope/Desktop/C programs/EjikeProject/main.c
+1675532951 source:/home/solokope/Desktop/C programs/EjikeProject/main.c
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
 
 1674314408 /home/solokope/Desktop/C programs/EjikeProject/HeaderOne.h
 
