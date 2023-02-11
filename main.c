@@ -1,14 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+double sqroot(double s){
+    //double x0 = s / 2.0;
+    double x0 = 600;
+    double x1 = 0.0;
+    double precision = .0001;
+    double delta = 1;
+
+    while(delta > precision){
+        x1 = .5 * (x0 + s / x0);
+        delta = fabs(x1 - x0);
+        printf("x0 = %.7f, x1 = %.7f, delta = %.7f  \n", x0, x1, delta);
+        x0 = x1;
+    }
+    return x1;
+}
+
 int main(){
 
-    char shut;
+    double s = 125348;
+    double x = sqroot(s);
 
-    printf("Want to shutdown your computer now? (Y/N)");    scanf("%c", &shut);
+    printf("x = %.7f, x * x = %.7f \n", x, x * x);
 
-    if(shut == 'y'){
-        system("shutdown -P now");
-    }
     return 0;
 }

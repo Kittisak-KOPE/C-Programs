@@ -562,22 +562,258 @@ printf("Sum is = %d", z);
 
 ### How to Calculate factorial using function
 
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+long factl(int n){
+    int c;
+    long ans = 1;
+
+    for(c=1; c<=n; c++){
+        ans = ans*c;
+    }
+    return ans;
+}
+
+int main(){
+
+    int N;
+    long fact = 1;
+
+    printf("Insert a number to calculate its factorial : ");    scanf("%d", &N);
+
+    printf("%d! : %ld \n", N, factl(N));
+
+    return 0;
+}
+```
+
 ### How to create Multiplication Table
+
+```
+int x, y;
+
+printf("Insert an integer to generate Multiplication table : ");    scanf("%d", &x);
+
+for(y=1; y<=12; ++y){
+    printf("%d * %d = %d \n", x, y, x*y);
+}
+```
 
 ### How to create Fibonacci Sequence
 
+```
+int a, b = 0, c = 1, d, e;
+
+printf("Insert the range of Fibonacci series : ");  scanf("%d", &a);
+
+for(d=0; d<a; d++){
+    if(d<=1){
+        e = d;
+    }else{
+        e = b + c;
+        b = c;
+        c = e;
+    }
+    printf("%d \n", e);
+}
+```
+
 ### How to Reverse Numbers
+
+```
+int x, rev = 0;
+
+printf("Insert some numbers : ");       scanf("%d", &x);
+
+while(x != 0){
+    rev = rev*10;
+    rev = rev + x%10;
+    x = x/10;
+}
+printf("The reversed number is : %d", rev);
+```
 
 ### How to Reverse Numbers using Array
 
+```
+int x, y, z[100];
+
+printf("Choose number of digits : ");       scanf("%d", &x);
+
+printf("Enter desired numbers : ");
+for(y=0; y<x; y++){
+    scanf("%d", &z[y]);
+}
+
+printf("The reversed numbers are : ");
+for(y=x-1; y>=0; y--){
+    printf("%d", z[y]);
+}
+```
+
 ### How to Reverse String
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+
+    char st[100];
+
+    printf("Insert a word : "); gets(st);
+
+    strrev(st);
+
+    printf("The reversed word is : ", st);
+
+    return 0;
+}
+```
 
 ### How to check Palindrome
 
+```
+int x, y, rev = 0;
+
+printf("Insert some numbers : ");   scanf("%d", &x);
+
+y = x;
+
+while(y!=0){
+    rev = rev*10;
+    rev = rev+y%10;
+    y=y/10;
+}
+
+if(x == rev){
+    printf("This numbers is a Palindrome!");
+}else{
+    printf("This numbers is not a Palindrome!");
+}
+```
+
 ### How to create Prime Numbers
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int prime_generator(int a){
+    int x;
+
+    for(x=2; x<=a-1; x++){
+        if(a%x == 0){
+            return 0;
+        }
+    }
+    if(x == a){
+        return 1;
+    }
+}
+
+int main(){
+
+    int x, y, output;
+
+    printf("Insert prime number range   : ");     scanf("%d", &y);
+
+    printf("The prime numbers of %d are : ", y);
+
+    for(x=0; x<y; x++){
+        output = prime_generator(x);
+        if(output == 1){
+            printf("%d \n", x);
+        }
+    }
+
+    return 0;
+}
+
+```
 
 ### How to Calculate HCF and LCM
 
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int HCFLCM(long a, long b){
+    if(a == 0){
+        return b;
+    }
+    while(b != 0){
+        if(a > b){
+            a = a - b;
+        }else{
+            b = b - a;
+        }
+    }
+    return a;
+}
+
+int main(){
+
+    long a, b, HCF, LCM;
+
+    printf("Insert first number  : ");       scanf("%ld", &a);
+    printf("Insert second number : ");       scanf("%ld", &b);
+
+    HCF = HCFLCM(a, b);
+    LCM = (a*b)/HCF;
+
+    printf("Highest common Factor of %ld and %ld is  : %ld \n", a, b, HCF);
+    printf("Lowest common Multiple of %ld and %ld is : %ld \n", a, b, LCM);
+
+    return 0;
+}
+```
+
 ### How to detect Armstrong Numbers
 
+```
+int x, y = 0, z, rem;
+
+printf("Insert some numbers : ");   scanf("%d", &x);
+
+z = x;
+
+while(z != 0){
+    rem = z%10;
+    y = y+rem*rem*rem;
+    z = z/10;
+}
+
+if(x == y){
+    printf("This number is an Armstrong Number...");
+}else{
+    printf("This is not an Armstrong Number...");
+}
+```
+
 ### How to generate Armstrong Numbers
+
+```
+int rem;
+long x = 0, y, z = 0, w;
+
+printf("Choose range of Armstrong numbers to generate : ");   scanf("%d", &x);
+
+printf("The list of Armstrong Numbers from 1 to %ld \n:", x);
+
+for(y=1; y<=x; y++){
+    w = y;
+    while(w != 0){
+        rem = w%10;
+        z = z + rem * rem * rem;
+        w = w/10;
+    }
+    if(y == z){
+        printf("%ld \n", y);
+    }
+    z = 0;
+}
+```
